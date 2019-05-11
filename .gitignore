@@ -1,0 +1,24 @@
+# MASTER IGNORE
+# Ignore everything in the root except the "wp-content" directory.
+/*
+!.gitignore
+!php.ini
+!wp-content/
+# FINE TUNE IGNORE (REPLACE THE THEME NAME AT BOTTOM)
+# Ignore everything in the "wp-content" directory, except the "plugins" and the theme
+wp-content/*
+!wp-content/plugins/
+!wp-content/themes/
+wp-content/themes/*
+!wp-content/themes/trades-portal
+# IGNORE OS FILES
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+*.mo
+node_modules
