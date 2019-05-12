@@ -32,7 +32,8 @@ $container = get_theme_mod( 'understrap_container_type' );
             $hero_banner_button_link = $hero['button_link'];
             $hero_banner_button_text = $hero['button_text'];
         ?>
-        <header class="masthead" style="background-image:url('<?php echo $hero_banner_image ?>');background-position: <?php echo $hero_banner_position ?>;">
+        <header class="masthead"
+            style="background-image:url('<?php echo $hero_banner_image ?>');background-position: <?php echo $hero_banner_position ?>;">
             <div class="container">
                 <div class="intro-text">
                     <div class="intro-lead-in"><?php echo $hero_banner_title ?></div>
@@ -94,23 +95,23 @@ $container = get_theme_mod( 'understrap_container_type' );
 
                 <?php 
                     if( $site_gallery_blocks ): ?>
-                    <div class="row">
-                        <?php foreach( $site_gallery_blocks as $key=>$block ): ?>
-                            <div class="col-md-4 col-sm-6 portfolio-item">
-                                <a href="<?php echo $block['url']; ?>" class="portfolio-link">
-                                    <div class="portfolio-hover">
-                                        <div class="portfolio-hover-content">
-                                            <i class="fas fa-plus fa-3x"></i>
-                                        </div>
-                                    </div>
-                                    <img class="img-fluid" src="<?php echo $block['url']; ?>" alt="">
-                                </a>
-                                <div class="portfolio-caption">
-                                    <h4><?php echo $block['title']; ?></h4>
-                                    <p class="text-muted"><?php echo $block['caption']; ?></p>
+                <div class="row">
+                    <?php foreach( $site_gallery_blocks as $key=>$block ): ?>
+                    <div class="col-md-4 col-sm-6 portfolio-item">
+                        <a href="<?php echo $block['description']; ?>" class="portfolio-link">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fas fa-plus fa-3x"></i>
                                 </div>
                             </div>
-                        <?php endforeach; ?>
+                            <img class="img-fluid" src="<?php echo $block['url']; ?>" alt="">
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4><?php echo $block['title']; ?></h4>
+                            <p class="text-muted"><?php echo $block['caption']; ?></p>
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
             <?php endif; ?>
@@ -133,23 +134,22 @@ $container = get_theme_mod( 'understrap_container_type' );
                             $site_timeline = get_field( 'timeline_area', $post_id );
                             $site_timeline_blocks = $site_timeline['timeline'];
                         ?>
-                           <?php foreach( $site_timeline_blocks as $key=>$block ): ?>
-                           <li <?php if( $key % 2 ){ echo "class='timeline-inverted'";} ?> >
-                                <div class="timeline-image">
-                                    <img class="rounded-circle img-fluid"
-                                        src="<?php echo $block['url']; ?>" alt="">
+                        <?php foreach( $site_timeline_blocks as $key=>$block ): ?>
+                        <li <?php if( $key % 2 ){ echo "class='timeline-inverted'";} ?>>
+                            <div class="timeline-image">
+                                <img class="rounded-circle img-fluid" src="<?php echo $block['url']; ?>" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4><?php echo $block['alt']; ?></h4>
+                                    <h4 class="subheading"><?php echo $block['title']; ?></h4>
                                 </div>
-                                <div class="timeline-panel">
-                                    <div class="timeline-heading">
-                                        <h4><?php echo $block['alt']; ?></h4>
-                                        <h4 class="subheading"><?php echo $block['title']; ?></h4>
-                                    </div>
-                                    <div class="timeline-body">
-                                        <p class="text-muted"><?php echo $block['caption']; ?></p>
-                                    </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted"><?php echo $block['caption']; ?></p>
                                 </div>
-                            </li>
-                           <?php endforeach; ?>
+                            </div>
+                        </li>
+                        <?php endforeach; ?>
                         <li class="timeline-inverted" data-toggle="modal" href="#portfolioModal-timeline">
                             <div class="timeline-image">
                                 <h4>Be Part
@@ -158,45 +158,41 @@ $container = get_theme_mod( 'understrap_container_type' );
                             </div>
                         </li>
                     </ul>
-                     <!-- Modal -->
-                     <?php  
+                    <!-- Modal -->
+                    <?php  
                         $site_timeline_current_e = $site_timeline['current_event'];
                         $timeline_title = $site_timeline_current_e['title'];
                         $timeline_subtitle = $site_timeline_current_e['subtitle'];
                         $timeline_image = $site_timeline_current_e['image'];
                         $timeline_date = $site_timeline_current_e['date'];
                     ?>
-                     <div class="portfolio-modal modal fade" id="portfolioModal-timeline" tabindex="-1" role="dialog" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="close-modal" data-dismiss="modal">
-                                        <div class="lr">
-                                            <div class="rl"></div>
-                                        </div>
-                                    </div>
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-8 mx-auto">
-                                                <div class="modal-body">
-                                                    <!-- Project Details Go Here -->
-                                                    <h2 class="text-uppercase"><?php echo $timeline_title; ?></h2>
-                                                    <p class="item-intro text-muted"><?php echo $timeline_subtitle; ?></p>
-                                                    <img class="img-fluid d-block mx-auto"
-                                                        src="<?php echo $timeline_image; ?>" alt="">
-                                                    <p><?php echo $description; ?></p>
-                                                    <ul class="list-inline">
-                                                        <li>Date: <?php echo $timeline_date; ?></li>
-                                                    </ul>
-                                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                                        <i class="fas fa-times"></i>
-                                                        Close Project</button>
-                                                </div>
+                    <div class="portfolio-modal modal fade" id="portfolioModal-timeline" tabindex="-1" role="dialog"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-8 mx-auto">
+                                            <div class="modal-body">
+                                                <!-- Project Details Go Here -->
+                                                <h2 class="text-uppercase"><?php echo $timeline_title; ?></h2>
+                                                <p class="item-intro text-muted"><?php echo $timeline_subtitle; ?></p>
+                                                <img class="img-fluid d-block mx-auto"
+                                                    src="<?php echo $timeline_image; ?>" alt="">
+                                                <p><?php echo $description; ?></p>
+                                                <ul class="list-inline">
+                                                    <li>Date: <?php echo $timeline_date; ?></li>
+                                                </ul>
+                                                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                                    <i class="fas fa-times"></i>
+                                                    Close </button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -212,8 +208,8 @@ $container = get_theme_mod( 'understrap_container_type' );
                 </div>
             </div>
             <div class="row">
-                        
-                    <?php 
+
+                <?php 
                         $count = 1;
                         while( have_rows('team') ): the_row(); 
                         	
@@ -224,54 +220,42 @@ $container = get_theme_mod( 'understrap_container_type' );
                        
 
                     ?>
-                        <div class="col-sm-3">
-                            <div class="team-member"  data-toggle="modal" href="#portfolioModal-team-<?php echo $count ?> ">
-                                <img class="mx-auto rounded-circle"
-                                    src="<?php echo $image; ?>" alt="">
-                                <h4><?php echo $title; ?></h4>
-                                <p class="text-muted"><?php echo $position; ?></p>
-                            </div>
-                        </div>
-                        
-                         <!-- Modal -->
-                        <div class="portfolio-modal modal fade" id="portfolioModal-team-<?php echo $count ?>" tabindex="-1" role="dialog" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="close-modal" data-dismiss="modal">
-                                        <div class="lr">
-                                            <div class="rl"></div>
-                                        </div>
-                                    </div>
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-8 mx-auto">
-                                                <div class="modal-body">
-                                                    <!-- Project Details Go Here -->
-                                                    <h2 class="text-uppercase"><?php echo $title; ?></h2>
-                                                    <p class="item-intro text-muted"><?php echo $position; ?></p>
-                                                    <img class="img-fluid d-block mx-auto"
-                                                        src="<?php echo $image; ?>" alt="">
-                                                    <p><?php echo $description; ?></p>
-                                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                                        <i class="fas fa-times"></i>
-                                                        Close Project</button>
-                                                </div>
-                                            </div>
+                <div class="col-sm-3">
+                    <div class="team-member" data-toggle="modal" href="#portfolioModal-team-<?php echo $count ?> ">
+                        <img class="mx-auto rounded-circle" src="<?php echo $image; ?>" alt="">
+                        <h4><?php echo $title; ?></h4>
+                        <p class="text-muted"><?php echo $position; ?></p>
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="portfolio-modal modal fade" id="portfolioModal-team-<?php echo $count ?>" tabindex="-1"
+                    role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-8 mx-auto">
+                                        <div class="modal-body">
+                                            <!-- Project Details Go Here -->
+                                            <h2 class="text-uppercase"><?php echo $title; ?></h2>
+                                            <p class="item-intro text-muted"><?php echo $position; ?></p>
+                                            <img class="img-fluid d-block mx-auto" src="<?php echo $image; ?>" alt="">
+                                            <p><?php echo $description; ?></p>
+                                            <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                                <i class="fas fa-times"></i>
+                                                Close </button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    <?php 
+                    </div>
+                </div>
+                <?php 
                     $count++;
                     endwhile; ?>
-               
-            </div>
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque,
-                        laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
-                </div>
+
             </div>
         </div>
     </section>
@@ -279,37 +263,22 @@ $container = get_theme_mod( 'understrap_container_type' );
     <!-- Clients -->
     <section class="page-section">
         <div class="container">
-        <div class="row">
+            <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
                     <h2 class="section-heading text-uppercase">Past Sponsors</h2>
                     <h3 class="large text-muted section-subheading"></h3>
                 </div>
             </div>
             <div class="row">
+                <?php 
+                $pastsponsor = get_field( 'past_sponsor', $post_id );
+                foreach( $pastsponsor as $key=>$block ): ?>
                 <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img class="img-fluid d-block mx-auto"
-                            src="<?php echo get_template_directory_uri() ?>/img/logos/envato.jpg" alt="">
+                    <a href="<?php echo $block['description']; ?>">
+                        <img class="img-fluid d-block mx-auto" src="<?php echo $block['url']; ?>" alt="">
                     </a>
                 </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img class="img-fluid d-block mx-auto"
-                            src="<?php echo get_template_directory_uri() ?>/img/logos/designmodo.jpg" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img class="img-fluid d-block mx-auto"
-                            src="<?php echo get_template_directory_uri() ?>/img/logos/themeforest.jpg" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img class="img-fluid d-block mx-auto"
-                            src="<?php echo get_template_directory_uri() ?>/img/logos/creative-market.jpg" alt="">
-                    </a>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </section>
@@ -366,48 +335,6 @@ $container = get_theme_mod( 'understrap_container_type' );
             </div>
         </div>
     </section>
-
-    <!-- Portfolio Modals -->
-
-    <!-- Modal 1 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl"></div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 mx-auto">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h2 class="text-uppercase">Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto"
-                                    src="<?php echo get_template_directory_uri() ?>/img/portfolio/01-full.jpg" alt="">
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos
-                                    deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores
-                                    repudiandae, nostrum, reiciendis facere nemo!</p>
-                                <ul class="list-inline">
-                                    <li>Date: January 2017</li>
-                                    <li>Client: Threads</li>
-                                    <li>Category: Illustration</li>
-                                </ul>
-                                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                    <i class="fas fa-times"></i>
-                                    Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
 </div><!-- #content -->
 
 </div><!-- #full-width-page-wrapper -->
