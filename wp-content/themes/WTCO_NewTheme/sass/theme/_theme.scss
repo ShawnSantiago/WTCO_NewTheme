@@ -1,0 +1,89 @@
+// This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+$primary: #fed136 !important;
+#mainNav {
+    .navbar-brand.custom-logo-link{
+        max-width: 200px;
+    }
+    &.fixed-top{
+        opacity: 0;
+        transition: 0.25s ease;
+        &.navbar-shrink{
+            opacity: 1;
+        }
+    }
+}
+.text-primary {
+    color: #f7da4a !important; 
+}
+// Styling for the masthead
+header.masthead {
+    .intro-text {
+      padding-top: 150px;
+      padding-bottom: 150px;
+      text-shadow: 2px 2px rgba(0,0,0,0.3);
+    }
+  }
+  @media(min-width:768px) {
+    header.masthead {
+      .intro-text {
+        padding-top: 300px;
+        padding-bottom: 300px;
+      }
+    }
+  }
+  
+.timeline{
+
+    > li {
+        .timeline-image{
+            background-color: #000;
+            transition: .25s ease;
+            img{
+                object-fit: cover;
+                max-width: 100%;
+                height: 100%;
+                width: 100%;
+            }
+            h4{
+                color: #f7da4a;
+            }
+        }
+        &:last-child{
+            cursor: pointer;
+            &:hover{
+                .timeline-image{
+                    background-color: #f7da4a;
+                    h4{
+                        color: #000;
+                    }
+                }
+            }
+        }
+    } 
+}
+
+
+#portfolio .portfolio-item .portfolio-link{
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    img{
+        margin: auto;
+        z-index: 1;
+    }
+    .portfolio-hover{
+        background-color: #f7da4a;;
+    }
+
+}
+
+#team{
+    .team-member{
+        transition: .25s ease;
+        cursor: pointer;
+        &:hover{
+            opacity: 0.8;
+        }
+    }
+}

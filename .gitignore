@@ -10,7 +10,7 @@ wp-content/*
 !wp-content/plugins/
 !wp-content/themes/
 wp-content/themes/*
-!wp-content/themes/trades-portal
+!wp-content/themes/WTCO_NewTheme
 # IGNORE OS FILES
 .DS_Store
 .DS_Store?
