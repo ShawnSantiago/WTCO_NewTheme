@@ -220,7 +220,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                        
 
                     ?>
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                     <div class="team-member" data-toggle="modal" href="#portfolioModal-team-<?php echo $count ?> ">
                         <img class="mx-auto rounded-circle" src="<?php echo $image; ?>" alt="">
                         <h4><?php echo $title; ?></h4>
@@ -269,7 +269,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                     <h3 class="large text-muted section-subheading"></h3>
                 </div>
             </div>
-            <div class="row">
+            <div class="row my-slider">
                 <?php 
                 $pastsponsor = get_field( 'past_sponsor', $post_id );
                 foreach( $pastsponsor as $key=>$block ): ?>
