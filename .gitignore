@@ -8,7 +8,6 @@
 # FINE TUNE IGNORE (REPLACE THE THEME NAME AT BOTTOM)
 # Ignore everything in the "wp-content" directory, except the "plugins" and the theme
 wp-content/*
-!wp-content/plugins/
 !wp-content/themes/
 wp-content/themes/*
 !wp-content/themes/WTCO_NewTheme
