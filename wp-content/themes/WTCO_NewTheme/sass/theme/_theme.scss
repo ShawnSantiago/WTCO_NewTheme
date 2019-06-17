@@ -22,6 +22,10 @@ header.masthead {
       padding-bottom: 150px;
       text-shadow: 2px 2px rgba(0,0,0,0.3);
     }
+    .btn-primary:hover {
+        background-color: transparent!important;
+
+    }
   }
   @media(min-width:768px) {
     header.masthead {
@@ -86,4 +90,18 @@ header.masthead {
             opacity: 0.8;
         }
     }
+}
+
+.modal {
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: 1050;
+    max-width: 800px;
+    max-height: 90%;
+}
+.portfolio-modal .modal-dialog {
+    margin: auto;
 }

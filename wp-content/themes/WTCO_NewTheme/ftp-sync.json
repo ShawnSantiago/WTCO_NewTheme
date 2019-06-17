@@ -1,0 +1,27 @@
+{
+    "remotePath": "/weekendcitizensto.com/wp-content/themes/WTCO_NewTheme",
+    "host": "http://weekendcitizensto.com",
+    "username": "shawnsan1 ",
+    "password": "FgT9&&S8c^2n",
+    "port": 21,
+    "secure": false,
+    "protocol": "ftp",
+    "uploadOnSave": false,
+    "passive": false,
+    "debug": false,
+    "privateKeyPath": null,
+    "passphrase": null,
+    "agent": null,
+    "allow": [],
+    "ignore": [
+        "\\.vscode",
+        "\\.git",
+        "\\.DS_Store"
+    ],
+    "generatedFiles": {
+        "extensionsToInclude": [
+            ""
+        ],
+        "path": ""
+    }
+}

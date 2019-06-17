@@ -20,19 +20,10 @@ $container = get_theme_mod( 'understrap_container_type' );
     <?php 
             $post_id = $post->ID;
             
-            $footer_copyright = get_field( 'copyright', $post_id );
-            
-            $footer_social = get_field( 'social', $post_id );
+            $footer = get_field( 'footer', $post_id );
 
-            $footer_facebook = $footer_social['facebook'];
-            $footer_facebook_url = $footer_facebook['url'];
-            $footer_facebook_icon = $footer_facebook['icon'];
-            $footer_facebook_textarea = $footer_facebook['text_area'];
-
-            $footer_instagram = $footer_social['instagram'];
-            $footer_instagram_url = $footer_instagram['url'];
-            $footer_instagram_icon = $footer_instagram['icon'];
-            $footer_instagram_textarea = $footer_instagram['text_area'];
+            $footer_facebook = $footer['facebook_url'];
+            $footer_instagram = $footer['instagram_url'];
 
 
         ?>
@@ -44,13 +35,13 @@ $container = get_theme_mod( 'understrap_container_type' );
             <div class="col-md-4">
                 <ul class="list-inline social-buttons">
                     <li class="list-inline-item">
-                        <a href="<?php echo $footer_instagram_url ?>">
-                            <i class="fab <?php echo $footer_instagram_icon ?>"></i>
+                        <a href="<?php echo $footer_instagram ?>">
+                            <i class="fab fa-instagram"></i>
                         </a>
                     </li>
                     <li class="list-inline-item">
-                        <a href="<?php echo $footer_facebook_url ?>">
-                            <i class="fab <?php echo $footer_facebook_icon ?>"></i>
+                        <a href="<?php echo $footer_facebook ?>">
+                            <i class="fab fa-facebook-f"></i>
                         </a>
                     </li>
                 </ul>
@@ -98,7 +89,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 </div><!-- #page we need this extra closing tag here -->
 
 <?php wp_footer(); ?>
-
 </body>
 
 </html>

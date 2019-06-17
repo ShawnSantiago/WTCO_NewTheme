@@ -37,7 +37,12 @@ $container = get_theme_mod( 'understrap_container_type' );
             <div class="container">
                 <div class="intro-text">
                     <div class="intro-lead-in"><?php echo $hero_banner_title ?></div>
-                    <div class="intro-heading text-uppercase"><?php echo $hero_banner_subtext ?></div>
+                    <div class="intro-heading text-uppercase"></div>
+                    <li class="timeline-inverted" data-toggle="modal" href="#portfolioModal-timeline">
+                 
+                    <button class="btn btn-primary btn-xl text-uppercase" data-toggle="modal" href="#portfolioModal-timeline">
+                    <?php echo $hero_banner_button_text ?>
+                    </button>
                 </div>
             </div>
         </header>
@@ -98,7 +103,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                 <div class="row">
                     <?php foreach( $site_gallery_blocks as $key=>$block ): ?>
                     <div class="col-md-4 col-sm-6 portfolio-item">
-                        <a href="<?php echo $block['description']; ?>" class="portfolio-link">
+                        <a href="http://<?php echo $block['alt']; ?>" class="portfolio-link">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content">
                                     <i class="fas fa-plus fa-3x"></i>
@@ -124,7 +129,6 @@ $container = get_theme_mod( 'understrap_container_type' );
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading text-uppercase">About</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
             </div>
             <div class="row">
@@ -204,7 +208,6 @@ $container = get_theme_mod( 'understrap_container_type' );
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
             </div>
             <div class="row">
@@ -220,7 +223,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                        
 
                     ?>
-                <div class="col-sm-3">
+                <div class="col-sm-12 col-md-3">
                     <div class="team-member" data-toggle="modal" href="#portfolioModal-team-<?php echo $count ?> ">
                         <img class="mx-auto rounded-circle" src="<?php echo $image; ?>" alt="">
                         <h4><?php echo $title; ?></h4>
@@ -261,7 +264,7 @@ $container = get_theme_mod( 'understrap_container_type' );
     </section>
 
     <!-- Clients -->
-    <section class="page-section">
+    <!-- <section class="page-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
@@ -270,18 +273,18 @@ $container = get_theme_mod( 'understrap_container_type' );
                 </div>
             </div>
             <div class="row">
-                <?php 
-                $pastsponsor = get_field( 'past_sponsor', $post_id );
-                foreach( $pastsponsor as $key=>$block ): ?>
+                <?php ///
+                //$pastsponsor = get_field( 'past_sponsor', $post_id );
+                //foreach( $pastsponsor as $key=>$block ): ?>
                 <div class="col-md-3 col-sm-6">
-                    <a href="<?php echo $block['description']; ?>">
-                        <img class="img-fluid d-block mx-auto" src="<?php echo $block['url']; ?>" alt="">
+                    <a href="//<?php //echo $block['description']; ?>">
+                        <img class="img-fluid d-block mx-auto" src="<?php //echo $block['url']; ?>" alt="">
                     </a>
                 </div>
-                <?php endforeach; ?>
+                <?php //endforeach; ?>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Contact -->
     <section class="page-section" id="contact">
@@ -289,7 +292,6 @@ $container = get_theme_mod( 'understrap_container_type' );
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading text-uppercase">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
             </div>
             <div class="row">

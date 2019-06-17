@@ -21,6 +21,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
+	<script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
 </head>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 <body <?php body_class(); ?>>
@@ -54,10 +55,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<div class="collapse navbar-collapse" id="navbarResponsive">
 						<ul class="navbar-nav text-uppercase ml-auto">
 							<li class="nav-item">
-								<a class="nav-link js-scroll-trigger" href="#services">Services</a>
+								<a class="nav-link js-scroll-trigger" href="#services">Values</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+								<a class="nav-link js-scroll-trigger" href="#portfolio">Sponsors</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link js-scroll-trigger" href="#about">About</a>
