@@ -87,17 +87,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 </footer>
 
 </div><!-- #page we need this extra closing tag here -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.1/min/tiny-slider.js"></script>
-<script type="module">
-
-  var slider = tns({
-    container: '.my-slider',
-    items: 3,
-    slideBy: 'page',
-    autoplay: true
-  });
-  </script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.1/min/tiny-slider.js"></script> -->
 <?php wp_footer(); ?>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
 </body>
 
 </html>

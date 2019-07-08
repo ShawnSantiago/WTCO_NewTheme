@@ -187,6 +187,17 @@ $container = get_theme_mod( 'understrap_container_type' );
                                                 <ul class="list-inline">
                                                     <li>Date: <?php echo $timeline_date; ?></li>
                                                 </ul>
+                                                <div class="payment-area">
+                                                    <div><span>Price :</span> $25</div>
+                                                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                                        <input type="hidden" name="cmd" value="_s-xclick">
+                                                        <input type="hidden" name="hosted_button_id" value="6EJSST92FRFXN">
+                                                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                                        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                                                    </form>
+                                                </div>
+                                               
+
                                                 <button class="btn btn-primary" data-dismiss="modal" type="button">
                                                     <i class="fas fa-times"></i>
                                                     Close </button>
@@ -264,7 +275,7 @@ $container = get_theme_mod( 'understrap_container_type' );
     </section>
 
     <!-- Clients -->
-    <!-- <section class="page-section">
+    <section class="page-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
@@ -272,19 +283,19 @@ $container = get_theme_mod( 'understrap_container_type' );
                     <h3 class="large text-muted section-subheading"></h3>
                 </div>
             </div>
-            <div class="row">
-                <?php ///
-                //$pastsponsor = get_field( 'past_sponsor', $post_id );
-                //foreach( $pastsponsor as $key=>$block ): ?>
-                <div class="col-md-3 col-sm-6">
-                    <a href="//<?php //echo $block['description']; ?>">
-                        <img class="img-fluid d-block mx-auto" src="<?php //echo $block['url']; ?>" alt="">
+            <div class="owl-carousel">
+                <?php 
+                $pastsponsor = get_field( 'past_sponsor', $post_id );
+                foreach( $pastsponsor as $key=>$block ): ?>
+                <div class="owl-sliders">
+                    <a href="<?php echo $block['description']; ?>">
+                        <img class="img-fluid d-block mx-auto" src="<?php echo $block['url']; ?>" alt="">
                     </a>
                 </div>
-                <?php //endforeach; ?>
+                <?php endforeach; ?>
             </div>
         </div>
-    </section> -->
+    </section>
 
     <!-- Contact -->
     <section class="page-section" id="contact">
