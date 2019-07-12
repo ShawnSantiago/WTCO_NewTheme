@@ -55,6 +55,20 @@ header.masthead {
                 color: #f7da4a;
             }
         }
+        .timeline-body{
+            p{
+                margin-bottom: 15px;
+            }
+            a{
+                border: 1px solid;
+                padding: 5px 25px;
+                text-decoration: none;
+                &:hover{
+                    background: #f7da4a;
+                    color: #fff;
+                }
+            }
+        }
         &:last-child{
             cursor: pointer;
             &:hover{
@@ -89,9 +103,21 @@ header.masthead {
     .team-member{
         transition: .25s ease;
         cursor: pointer;
+          img{
+            &.profile-adult{
+                display: none;
+            }
+        }
         &:hover{
             opacity: 0.8;
+            img{
+                display: none;
+                &.profile-adult{
+                    display: block;
+                }
+            }
         }
+      
     }
 }
 
@@ -165,11 +191,58 @@ header.masthead {
 .owl-carousel.owl-theme {
     .owl-item{
         padding: 0 25px;
-        img{
-            min-height: 250px;
-            width: auto;
-            object-fit: contain;
-            object-position: center;
+        .owl-sliders{
+            margin: auto;
+            img{
+                min-height: 250px;
+                width: auto;
+                object-fit: contain;
+                object-position: center;
+            }
+        }
+      
+    }
+}
+
+.page-template-gallery{
+    #mainNav.fixed-top{
+        opacity: 1;
+        background-color: #212529;
+        ul{
+            display: none;
+        }
+    }
+    .slider-container{
+        margin-top: 120px;
+        padding: 75px;
+        .slick-dotted.slick-slider {
+            padding-bottom: 50px;
+        }
+        .slider-nav {
+            max-width: 900px;
+            margin: auto;
+
+        }
+        @media screen and (max-width:768px){
+            padding: 5px;
+            .slider-nav {
+                position: fixed;
+                bottom: 0px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .slick-dots{
+                display:none !important;
+            }
+        }
+    }
+    .owl-wrapper {
+        display: flex !important;
+        .owl-item{
+            display: flex;
+            img{
+                margin: auto;
+            }
         }
     }
 }

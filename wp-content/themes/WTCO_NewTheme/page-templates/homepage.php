@@ -150,6 +150,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                                 </div>
                                 <div class="timeline-body">
                                     <p class="text-muted"><?php echo $block['caption']; ?></p>
+                                    <a href="<?php echo $block['description']; ?>" target="_blank">Photos</a>
                                 </div>
                             </div>
                         </li>
@@ -227,7 +228,8 @@ $container = get_theme_mod( 'understrap_container_type' );
                         $count = 1;
                         while( have_rows('team') ): the_row(); 
                         	
-                        $image = get_sub_field('profile');
+                        $image = get_sub_field('profile-baby');
+                        $image2 = get_sub_field('profile-adult');
                         $position = get_sub_field('position');
                         $title = get_sub_field('title');
                         $description = get_sub_field('description');
@@ -237,6 +239,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                 <div class="col-sm-12 col-md-3">
                     <div class="team-member" data-toggle="modal" href="#portfolioModal-team-<?php echo $count ?> ">
                         <img class="mx-auto rounded-circle" src="<?php echo $image; ?>" alt="">
+                        <img class="mx-auto rounded-circle profile-adult" src="<?php echo $image2; ?>" alt="">
                         <h4><?php echo $title; ?></h4>
                         <p class="text-muted"><?php echo $position; ?></p>
                     </div>

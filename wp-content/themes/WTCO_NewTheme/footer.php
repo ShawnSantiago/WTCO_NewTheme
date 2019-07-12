@@ -49,10 +49,10 @@ $container = get_theme_mod( 'understrap_container_type' );
             <div class="col-md-4">
                 <ul class="list-inline quicklinks">
                     <li class="list-inline-item">
-                        <a data-toggle="modal" href="#portfolioModal-privacy_policy">Privacy Policy</a>
+                        <a href="/privacy-policy/" target="_blank">Privacy Policy</a>
                     </li>
                     <li class="list-inline-item">
-                        <a data-toggle="modal" href="#portfolioModal-timeline">Terms of Use</a>
+                        <a href="/terms-of-use/" target="_blank">Terms of Use</a>
                     </li>
                 </ul>
             </div>
@@ -90,7 +90,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.1/min/tiny-slider.js"></script> -->
 <?php wp_footer(); ?>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
+
 </body>
 
 </html>
