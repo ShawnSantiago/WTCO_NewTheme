@@ -292,7 +292,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                 foreach( $pastsponsor as $key=>$block ): ?>
                 <div class="owl-sliders">
                     <a href="<?php echo $block['description']; ?>">
-                        <img class="img-fluid d-block mx-auto" src="<?php echo $block['url']; ?>" alt="">
+                        <img class="img-fluid d-block mx-auto" src="<?php echo $block['sizes']['medium']; ?>" alt="">
                     </a>
                 </div>
                 <?php endforeach; ?>

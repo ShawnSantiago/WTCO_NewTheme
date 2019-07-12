@@ -25,5 +25,8 @@ jQuery(document).ready(function(){
             autoWidth:true,
             items:4
         });
+        setTimeout(function() {
+            jQuery(".owl-carousel .owl-stage").css("display","flex");
+        }, 250);
     }
   });

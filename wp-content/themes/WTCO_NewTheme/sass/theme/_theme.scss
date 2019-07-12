@@ -188,19 +188,22 @@ header.masthead {
         font-weight: bold;
     }
 }
-.owl-carousel.owl-theme {
-    .owl-item{
-        padding: 0 25px;
-        .owl-sliders{
-            margin: auto;
-            img{
-                min-height: 250px;
-                width: auto;
-                object-fit: contain;
-                object-position: center;
+.owl-carousel {
+    .owl-stage{
+        // display: flex;
+        .owl-item{
+            padding: 0 25px;
+            .owl-sliders{
+                margin: auto;
+                img{
+                    min-height: 250px;
+                    width: auto;
+                    object-fit: contain;
+                    object-position: center;
+                }
             }
+          
         }
-      
     }
 }
 
