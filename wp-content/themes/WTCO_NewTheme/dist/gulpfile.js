@@ -152,7 +152,7 @@ gulp.task('scripts', function() {
 		`${paths.dev}/js/vendors/*.js`,
 		// End - All BS4 stuff
 
-		`${paths.dev}/js/skip-link-focus-fix.js`,
+		`${paths.dev}/js./js/vendor/skip-link-focus-fix.js`,
 
 		// Adding currently empty javascript file to add on for your own themes´ customizations
 		// Please add any customizations to this .js file only!
@@ -161,14 +161,14 @@ gulp.task('scripts', function() {
 	gulp
 		.src(scripts, { allowEmpty: true })
 		.pipe(babel())
-		.pipe(concat('theme-styles.min.js'))
+		.pipe(concat('theme.min.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest(paths.js));
 
 	return gulp
 		.src(scripts, { allowEmpty: true })
 		.pipe(babel())
-		.pipe(concat('theme-scripts.js'))
+		.pipe(concat('theme.js'))
 		.pipe(gulp.dest(paths.js));
 });
 
@@ -218,7 +218,7 @@ gulp.task('copy-assets', function(done) {
 
 	// _s JS files into /src/js
 	gulp
-		.src(`${paths.node}undescores-for-npm/js/skip-link-focus-fix.js`)
+		.src(`${paths.node}undescores-for-npm/js./js/vendor/skip-link-focus-fix.js`)
 		.pipe(gulp.dest(`${paths.dev}/js`));
 
 	done();
@@ -232,7 +232,7 @@ gulp.task('clean-vendor-assets', function() {
 		'./fonts/*wesome*.{ttf,woff,woff2,eot,svg}',
 		`${paths.dev}/sass/fontawesome/**`,
 		`${paths.dev}/sass/underscores/**`,
-		`${paths.dev}/js/skip-link-focus-fix.js`,
+		`${paths.dev}/js./js/vendor/skip-link-focus-fix.js`,
 		`${paths.js}/**/skip-link-focus-fix.js`,
 		`${paths.js}/**/popper.min.js`,
 		`${paths.js}/**/popper.js`,
@@ -283,19 +283,19 @@ gulp.task(
 			)
 			.pipe(
 				replace(
-					'/js/jquery.slim.min.js',
+					'/js./js/vendor/jquery.slim.min.js',
 					'/js' + paths.vendor + '/jquery.slim.min.js',
 					{ skipBinary: true }
 				)
 			)
 			.pipe(
-				replace('/js/popper.min.js', '/js' + paths.vendor + '/popper.min.js', {
+				replace('/js./js/vendor/popper.min.js', '/js' + paths.vendor + '/popper.min.js', {
 					skipBinary: true
 				})
 			)
 			.pipe(
 				replace(
-					'/js/skip-link-focus-fix.js',
+					'/js./js/vendor/skip-link-focus-fix.js',
 					'/js' + paths.vendor + '/skip-link-focus-fix.js',
 					{ skipBinary: true }
 				)
